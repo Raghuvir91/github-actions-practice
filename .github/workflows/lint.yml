@@ -15,6 +15,13 @@ jobs:
     steps:
       - name: Checkout/clone the code
         uses: actions/checkout@v7
+         # 2. Install and set up the Python version
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+         python-version: '3.13' # Specify your exact Python version (e.g., '3.11', '3.12', etc.)
+
+
         # this step will install the linting tool
       - name: Install Linter 
         run: pip install ruff 
